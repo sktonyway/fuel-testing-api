@@ -29,7 +29,7 @@ app.get('/api/txn',async (req,res)=>{
 app.get('/api/txn/:erv', async (req,res)=>{
     try{
         const {erv} = req.params;
-        const data = await Transaction.find({erv});
+        const data = await Transaction.find({erv}).sort({ date: 1 });
         res.json(data)
     }catch(err){
         console.error(err);
