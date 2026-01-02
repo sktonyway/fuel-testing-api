@@ -63,7 +63,6 @@ app.post('/api/submitTxn', async (req,res)=>{
       amt: Number(amt),
       kmpl: Number(kmpl),
       remarks,
-      date: date ? new Date(date) : undefined // fallback to Date.now
     });
         const savedTxn = await txn.save(); // Saved to mongodb;
         res.status(201).json({
