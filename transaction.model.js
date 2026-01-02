@@ -41,7 +41,7 @@ const txnSchema = new mongoose.Schema({
     },
     date:{
         type:Date,
-        default:Date.now
+        default:new Date(Date.now() + 330 * 60000)
     },
     erv:{
         type:String,
